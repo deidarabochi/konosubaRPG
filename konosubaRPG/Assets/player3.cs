@@ -68,11 +68,11 @@ public class player3 : MonoBehaviour
             {
                 axisY = 0;
             }
-            if (Mathf.Abs(transform.position.x - destX) < 0.4)
+            if (Mathf.Abs(transform.position.x - destX) < 0.06)
             {
                 axisX = 0;
             }
-            if (Mathf.Abs(transform.position.y - destY) < 0.4)
+            if (Mathf.Abs(transform.position.y - destY) < 0.06)
             {
                 axisY = 0;
             }
