@@ -144,8 +144,6 @@
       <Project>{848F21C6-C2FA-8AAD-4324-D3D6CFF3A9CB}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-CSharp-Editor-firstpass.csproj">
       <Project>{3749BA6C-0E2A-A45F-FFBC-0A23527DDB2B}</Project>      <Name>Assembly-CSharp-Editor-firstpass</Name>    </ProjectReference>
-    <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{619E14A1-1AE2-C895-C405-77FF6E4A7E33}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
