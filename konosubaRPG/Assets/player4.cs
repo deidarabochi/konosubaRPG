@@ -1,94 +1,85 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class player4 : MonoBehaviour
 {
-    private float speed;
-    public GameObject globalObject;
-    private globalScript otherScriptToAccess;
+	public GameObject globalObject;
+	private globalScript otherScriptToAccess;
 
-    //The controllerNumber int variable from globalScript
-    private int playerControllerNumber;
+	//The controllerNumber int variable from globalScript
+	private int playerControllerNumber;
 
-    private float destX;
-    private float destY;
-    private bool isMoving;
+	//The point to move to
+	public Transform target;
 
-    // Use this for initialization
-    void Start()
-    {
-        speed = 3;
-        destX = 0;
-        destY = 0;
-        isMoving = false;
-    }
+	private Seeker seeker;
 
-    // Update is called once per frame
-    void Update()
-    {
-        otherScriptToAccess = globalObject.GetComponent<globalScript>(); //assigned our GameObject above to the script of globalScript
-        playerControllerNumber = otherScriptToAccess.controllerNumber;
-        if (playerControllerNumber == 4 && Input.GetMouseButtonDown(1))
-        {
-            Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);//Obtains world coordinates of right-clicked area
-            destX = pos.x;
-            destY = pos.y;
+	//The calculated path
+	public Path path;
 
-            Debug.Log(destX);
-            Debug.Log(destY);
+	//The AI's speed per second
+	public float speed = 2;
 
-            isMoving = true;
-        }
-        if (isMoving == true)
-        {
-            float axisX;
-            float axisY;
-            if (transform.position.x < destX)
-            {
-                axisX = 1;
-            }
-            else if (transform.position.x > destX)
-            {
-                axisX = -1;
-            }
-            else
-            {
-                axisX = 0;
-            }
-            if (transform.position.y < destY)
-            {
-                axisY = 1;
-            }
-            else if (transform.position.y > destY)
-            {
-                axisY = -1;
-            }
-            else
-            {
-                axisY = 0;
-            }
-            if (Mathf.Abs(transform.position.x - destX) < 0.06)
-            {
-                axisX = 0;
-            }
-            if (Mathf.Abs(transform.position.y - destY) < 0.06)
-            {
-                axisY = 0;
-            }
-            if (axisX == 0)
-            {
-                axisY *= 1.414f;
-            }
-            if (axisY == 0)
-            {
-                axisX *= 1.414f;
-            }
-            transform.Translate(new Vector3(axisX, axisY) * Time.deltaTime * speed);
-            if (axisX == 0 && axisY == 0)
-            {
-                isMoving = false;
-            }
-        }
-    }
+	//The max distance from the AI to a waypoint for it to continue to the next waypoint
+	public float nextWaypointDistance = 0.02f;
+
+	//The waypoint we are currently moving towards
+	private int currentWaypoint = 0;
+
+	public void Start ()
+	{
+		seeker = GetComponent<Seeker>();
+
+		//Start a new path to the targetPosition, return the result to the OnPathComplete function
+		seeker.StartPath( transform.position, target.position, OnPathComplete );
+	}
+
+	public void OnPathComplete ( Path p )
+	{
+		//Debug.Log( "Yay, we got a path back. Did it have an error? " + p.error );
+		if (!p.error)
+		{
+			path = p;
+			//Reset the waypoint counter
+			currentWaypoint = 0;
+		}
+	}
+
+	public void FixedUpdate ()
+	{
+		if (path == null)
+		{
+			//We have no path to move after yet
+			return;
+		}
+
+		if (currentWaypoint >= path.vectorPath.Count)
+		{
+			//Debug.Log( "End Of Path Reached" );
+			return;
+		}
+
+		//Direction to the next waypoint
+		Vector3 dir = ( path.vectorPath[ currentWaypoint ] - transform.position ).normalized;
+		dir *= speed * Time.fixedDeltaTime;
+		this.gameObject.transform.Translate( dir );
+
+		//Check if we are close enough to the next waypoint
+		//If we are, proceed to follow the next waypoint
+		if (Vector3.Distance( transform.position, path.vectorPath[ currentWaypoint ] ) < nextWaypointDistance)
+		{
+			currentWaypoint++;
+			return;
+		}
+	}
+	void Update () {
+		if (Input.GetMouseButtonDown (1)) {
+			seeker = GetComponent<Seeker>();
+
+			//Start a new path to the targetPosition, return the result to the OnPathComplete function
+			seeker.StartPath( transform.position, target.position, OnPathComplete );
+		}
+	}
 }
