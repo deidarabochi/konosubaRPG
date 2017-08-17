@@ -305,7 +305,7 @@ MonoBehaviour:
   - m_Target: {fileID: 1107155192210448834, guid: 0fbef1e25c8554ab4a554102cb7357c9,
       type: 2}
     m_ScrollPosition: {x: 0, y: 0}
-  - m_Target: {fileID: 1102031036268572160, guid: 0fbef1e25c8554ab4a554102cb7357c9,
+  - m_Target: {fileID: 1102580344343370522, guid: 0fbef1e25c8554ab4a554102cb7357c9,
       type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
@@ -413,19 +413,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets
+    - Assets/Sprites
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Sprites
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/junha/Documents/GitHub/konosubaRPG/konosubaRPG
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: f0260000
-    m_LastClickedID: 9968
-    m_ExpandedIDs: 00000000f026000000ca9a3bffffff7f
+    m_SelectedIDs: 0e2c0000
+    m_LastClickedID: 11278
+    m_ExpandedIDs: 00000000f226000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -453,7 +453,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000f0260000
+    m_ExpandedIDs: 00000000f2260000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -569,8 +569,8 @@ MonoBehaviour:
     height: 432
   m_TreeViewState:
     scrollPos: {x: 0, y: 1}
-    m_SelectedIDs: 20270000
-    m_LastClickedID: 0
+    m_SelectedIDs: 2c2a0000
+    m_LastClickedID: 10796
     m_ExpandedIDs: 1afcffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -626,9 +626,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.30334604, y: -0.6789641, z: 0}
+    m_Target: {x: -0.2687065, y: -0.6789641, z: 0}
     speed: 2
-    m_Value: {x: -0.30334604, y: -0.6789641, z: 0}
+    m_Value: {x: -0.2687065, y: -0.6789641, z: 0}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -655,9 +655,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 13.970014
+    m_Target: 13.990887
     speed: 2
-    m_Value: 13.970014
+    m_Value: 13.990887
   m_Ortho:
     m_Target: 1
     speed: 2

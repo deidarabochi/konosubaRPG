@@ -5,7 +5,7 @@ public class rtsCamera : MonoBehaviour
 	private const int LevelArea = 100;
 
 	private const int ScrollArea = 25;
-	private const int ScrollSpeed = 15;
+	private const int ScrollSpeed = 10;
 
 	public Camera camera;
 
