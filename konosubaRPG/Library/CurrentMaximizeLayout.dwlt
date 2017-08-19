@@ -20,10 +20,10 @@ MonoBehaviour:
     y: 30
     width: 1440
     height: 800
-  m_MinSize: {x: 683, y: 492}
-  m_MaxSize: {x: 14004, y: 14042}
+  m_MinSize: {x: 683, y: 471}
+  m_MaxSize: {x: 14002, y: 14021}
   vertical: 0
-  controlID: 4745
+  controlID: 16939
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -120,10 +120,10 @@ MonoBehaviour:
     y: 0
     width: 1054
     height: 800
-  m_MinSize: {x: 406, y: 492}
-  m_MaxSize: {x: 10002, y: 14042}
+  m_MinSize: {x: 406, y: 471}
+  m_MaxSize: {x: 10000, y: 14021}
   vertical: 1
-  controlID: 4680
+  controlID: 16940
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 4681
+  controlID: 16918
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -201,7 +201,7 @@ MonoBehaviour:
     height: 432
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 92330000
+    m_SelectedIDs: 42f5faff
     m_LastClickedID: 0
     m_ExpandedIDs: 1afcffff00000000
     m_RenameOverlay:
@@ -253,7 +253,7 @@ MonoBehaviour:
   - {fileID: 9}
   - {fileID: 10}
   m_Selected: 1
-  m_LastSelected: 0
+  m_LastSelected: 3
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -281,14 +281,14 @@ MonoBehaviour:
     width: 792
     height: 432
   m_SceneLighting: 1
-  lastFramingTime: 1411.1138300964417
+  lastFramingTime: 8008.955011963844
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -8.281095, y: -6.989581, z: 0}
+    m_Target: {x: -9.172655, y: -7.0758185, z: 0}
     speed: 2
-    m_Value: {x: -8.281095, y: -6.989581, z: 0}
+    m_Value: {x: -9.172655, y: -7.0758185, z: 0}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -315,9 +315,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 15.261153
+    m_Target: 6.703112
     speed: 2
-    m_Value: 15.261153
+    m_Value: 6.703112
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -385,15 +385,24 @@ MonoBehaviour:
     - {fileID: 1107155192210448834, guid: 0fbef1e25c8554ab4a554102cb7357c9, type: 2}
     - {fileID: 1102031036268572160, guid: 0fbef1e25c8554ab4a554102cb7357c9, type: 2}
     - {fileID: 1102580344343370522, guid: 0fbef1e25c8554ab4a554102cb7357c9, type: 2}
+    - {fileID: 1107609649283843196, guid: a59bad7e02aa34210aae4408c47c6939, type: 2}
+    - {fileID: 1102619598958257084, guid: a59bad7e02aa34210aae4408c47c6939, type: 2}
+    - {fileID: 1102885875590992056, guid: a59bad7e02aa34210aae4408c47c6939, type: 2}
     m_ValueSerializationHelper:
-    - {x: 436.00003, y: 131.07501}
+    - {x: 183.20001, y: 67.70001}
     - {x: 405.2, y: 254.20001}
     - {x: 405.2, y: 242.77423}
+    - {x: 405.2, y: 254.20001}
+    - {x: 422.2, y: 295.8766}
+    - {x: 405.2, y: 254.20001}
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: 0fbef1e25c8554ab4a554102cb7357c9,
+  m_AnimatorController: {fileID: 9100000, guid: a59bad7e02aa34210aae4408c47c6939,
     type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: 1107155192210448834, guid: 0fbef1e25c8554ab4a554102cb7357c9,
+  - m_Target: {fileID: 1107609649283843196, guid: a59bad7e02aa34210aae4408c47c6939,
+      type: 2}
+    m_ScrollPosition: {x: 0, y: 0}
+  - m_Target: {fileID: 1102885875590992056, guid: a59bad7e02aa34210aae4408c47c6939,
       type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
@@ -424,8 +433,8 @@ MonoBehaviour:
     y: 453
     width: 1054
     height: 347
-  m_MinSize: {x: 232, y: 271}
-  m_MaxSize: {x: 10002, y: 10021}
+  m_MinSize: {x: 230, y: 250}
+  m_MaxSize: {x: 10000, y: 10000}
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
@@ -470,19 +479,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets
+    - Assets/Anim/megumin
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Anim/megumin
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/junha/Documents/GitHub/konosubaRPG/konosubaRPG
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: f2260000
-    m_LastClickedID: 9970
-    m_ExpandedIDs: 00000000f22600002c27000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 11}
+    m_SelectedIDs: f6930000
+    m_LastClickedID: 37878
+    m_ExpandedIDs: 00000000f226000030270000b82800004aa3000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -510,7 +519,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000f22600002c27000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000f226000030270000b82800004aa3000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -535,9 +544,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 92330000
-    m_LastClickedInstanceID: 13202
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: 42f5faff
+    m_LastClickedInstanceID: -330430
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -564,7 +573,7 @@ MonoBehaviour:
     m_NewAssetIndexInList: -1
     m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 64
-  m_DirectoriesAreaWidth: 115
+  m_DirectoriesAreaWidth: 178
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
