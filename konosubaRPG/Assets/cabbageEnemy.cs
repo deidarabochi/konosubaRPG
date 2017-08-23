@@ -3,94 +3,79 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class cabbageEnemy : MonoBehaviour {
-	public BoxCollider territory;
-	GameObject player1;
-	//GameObject player2;
-	//GameObject player3;
-	//GameObject player4;
-	bool playerInTerritory;
+	public Transform player1;
+	public Transform player2;
+	//public Transform player3;
+	//public Transform player4;
+	float MoveSpeed = 0.7f;
+	float MaxDist = 1.5f;
+	float MinDist = 1.25f;
+	float AgroDist = 3f;
+	float DeAgroDist = 3.25f;
+	bool isAgro = false;
+	int whoAgro = 1;
+	Vector3 dir = new Vector3(0, 0, 0);
 
-	public GameObject enemy;
-	BasicEnemy basicenemy;
-
-	// Use this for initialization
-	void Start ()
+	void Start()
 	{
-		player1 = GameObject.FindGameObjectWithTag ("kuzuma");
-		//player2 = GameObject.FindGameObjectWithTag ("megumin");
-		//player3 = GameObject.FindGameObjectWithTag ("akua");
-		//player4 = GameObject.FindGameObjectWithTag ("oppai");
-		basicenemy = enemy.GetComponent <BasicEnemy> ();
-		playerInTerritory = false;
+
 	}
 
-	// Update is called once per frame
-	void Update ()
+	void Update()
 	{
-		if (playerInTerritory == true)
-		{
-			basicenemy.MoveToPlayer ();
+		//KAZUMA AGRO
+		if (Vector3.Distance (transform.position, player1.position) <= AgroDist && isAgro == false) {
+			isAgro = true;
+			whoAgro = 1;
+		}
+		if (whoAgro == 1 && Vector3.Distance (transform.position, player1.position) >= DeAgroDist && isAgro == true) {
+			isAgro = false;
 		}
 
-		if (playerInTerritory == false)
-		{
-			basicenemy.Rest ();
+		if (whoAgro == 1) {
+			dir = new Vector3(player1.position.x - transform.position.x, player1.position.y - transform.position.y, 0);
+			Vector3.Normalize (dir);
+			if (Vector3.Distance(transform.position, player1.position) >= MinDist && isAgro == true)
+			{
+
+				transform.position += dir * MoveSpeed * Time.deltaTime;
+
+
+
+				if (Vector3.Distance(transform.position, player1.position) <= MaxDist)
+				{
+					//Here Call any function U want Like Shoot at here or something
+				}
+
+			}
 		}
-	}
 
-	void OnTriggerEnter (Collider other)
-	{
-		if (other.gameObject == player1)
-		{
-			playerInTerritory = true;
+		//MEGUMIN AGRO
+		if (Vector3.Distance (transform.position, player2.position) <= AgroDist && isAgro == false) {
+			isAgro = true;
+			whoAgro = 2;
 		}
-	}
-
-	void OnTriggerExit (Collider other)
-	{
-		if (other.gameObject == player1) 
-		{
-			playerInTerritory = false;
+		if (whoAgro == 2 && Vector3.Distance (transform.position, player2.position) >= DeAgroDist && isAgro == true) {
+			isAgro = false;
 		}
-	}
-}
 
-public class BasicEnemy : MonoBehaviour
-{
-	public Transform target;
-	public float speed = 2f;
-	public float attack1Range = 1f;
-	public int attack1Damage = 1;
-	public float timeBetweenAttacks;
+		if (whoAgro == 2) {
+			dir = new Vector3(player2.position.x - transform.position.x, player2.position.y - transform.position.y, 0);
+			Vector3.Normalize (dir);
+			if (Vector3.Distance(transform.position, player2.position) >= MinDist && isAgro == true)
+			{
+
+				transform.position += dir * MoveSpeed * Time.deltaTime;
 
 
-	// Use this for initialization
-	void Start ()
-	{
-		Rest ();
-	}
 
-	// Update is called once per frame
-	void Update ()
-	{
+				if (Vector3.Distance(transform.position, player2.position) <= MaxDist)
+				{
+					//Here Call any function U want Like Shoot at here or something
+				}
 
-	}
-
-	public void MoveToPlayer ()
-	{
-		//rotate to look at player
-		transform.LookAt (target.position);
-		transform.Rotate (new Vector3 (0, -90, 0), Space.Self);
-
-		//move towards player
-		if (Vector3.Distance (transform.position, target.position) > attack1Range) 
-		{
-			transform.Translate (new Vector3 (speed * Time.deltaTime, 0, 0));
+			}
 		}
-	}
-
-	public void Rest ()
-	{
 
 	}
 }

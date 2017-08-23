@@ -23,8 +23,8 @@ public class target4 : MonoBehaviour {
 		playerControllerNumber = otherScriptToAccess.controllerNumber;
 		if (playerControllerNumber == 4 && Input.GetMouseButtonDown (1)) {
 			Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);//Obtains world coordinates of right-clicked area
-			clickX = RoundToNearestMultiple(pos.x, 0.32f);
-			clickY = RoundToNearestMultiple(pos.y, 0.32f);
+			clickX = RoundToNearestMultiple(pos.x, 0.16f);
+			clickY = RoundToNearestMultiple(pos.y, 0.16f);
 			transform.position = new Vector3(clickX, clickY, 0);
 		}
 	}
